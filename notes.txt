@@ -1,1 +1,10 @@
 firstname=Universal&lastname=Info&gender=male&skill=HTML&country=India
+
+
+
+
+//repo:- html_basics
+
+https://github.com/duruniversal123/Html_basics/blob/master/demo.html
+
+https://github.com/duruniversal123/Html_basics.git
