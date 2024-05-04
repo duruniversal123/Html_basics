@@ -1,0 +1,1 @@
+firstname=Universal&lastname=Info&gender=male&skill=HTML&country=India

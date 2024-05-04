@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<link>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="style.css">
+</link>
+</head>
+
+<body>
+    <h1 id="head" onmouseover="mouseOver()">Hello All</h1>
+    <form >
+        <div>
+            <label for="firstname">
+                First Name
+            </label>
+            <sup><span class="required">*</span></sup>
+            <input type="text" name="firstname" id="firstname" required />
+        </div>
+        </br>
+        <div>
+            <label for="lastname">
+                Last Name
+            </label>
+            <sup><span class="required">*</span></sup>
+            <input type="text" name="lastname" id="lastname" required/>
+        </div>
+        <br>
+        <div>
+            <label for="username">
+                User name
+            </label>
+            <sup><span class="required">*</span></sup>
+            <input type="email" name="username" id="username" required />
+        </div>
+        <br>
+        <div>
+            <label for="password">
+             Password
+            </label>
+            <sup><span class="required">*</span></sup>
+            <input type="password" name="password" id="password" required />
+        </div>
+        <br>
+        
+        <div>
+            <lable for="gender">Gender</lable>
+            <sup><span class="required">*</span></sup>
+            <input type="radio" name="gender" value="male" id="gender"/>
+            <span>Male</span>
+            <input type="radio" name="gender" value="female"/>
+            <span>Female</span>
+        </div>
+
+        <br>
+        <div>
+            <label for="skill">Skills</label>
+            <sup><span class="required">*</span></sup>
+            <input type="checkbox" name="skill" value="HTML" id="skill"/>
+            <span>HTML</span>
+            <input type="checkbox" name="skill" value="CSS" id="skill" />
+            <span>CSS</span>
+            <input type="checkbox" name="skill" value="JS" id="skill"/>
+            <span>JS</span>
+
+        </div>
+        <br>
+        <div>
+            <label for="address">Address</label>
+            <sup><span class="required">*</span></sup>
+            <textarea name="address" id="address"></textarea>
+        </div>
+        <button type="submit"
+            style="margin-top: 15px; margin-left: 50px; padding:5px;border-radius:5px; cursor: pointer;">Submit</button>
+
+    </form>
+</body>
+
+<script>
+    console.log("hello world!");
+    var h1=document.getElementById("head");
+    console.log("h1",h1);
+    // return;
+    h1.style.backgroundColor = "blue";
+    h1.style.cursor = "pointer";
+    h1.style.color = "white";
+    h1.style.fontSize = "18px";
+    h1.style.border = "1 px solid black";
+    h1.style.padding = "5px";
+    // h1.addEventListener("mouseover", function(){
+    //     console.log("mouseover calling");
+    //     h1.style.backgroundColor = "gray";
+    // });
+
+    function mouseOver(){
+        console.log("mouseover calling");
+        h1.style.backgroundColor = "gray";
+    }
+    h1.addEventListener("mouseout", function(){
+        console.log("mouseout calling");
+        h1.style.backgroundColor = "blue";
+    })
+</script>
+
+</html>
