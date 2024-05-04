@@ -10,7 +10,7 @@
 
 <body>
     <h1 id="head" onmouseover="mouseOver()">Hello All</h1>
-    <form >
+    <form>
         <div>
             <label for="firstname">
                 First Name
@@ -24,7 +24,7 @@
                 Last Name
             </label>
             <sup><span class="required">*</span></sup>
-            <input type="text" name="lastname" id="lastname" required/>
+            <input type="text" name="lastname" id="lastname" required />
         </div>
         <br>
         <div>
@@ -37,19 +37,19 @@
         <br>
         <div>
             <label for="password">
-             Password
+                Password
             </label>
             <sup><span class="required">*</span></sup>
             <input type="password" name="password" id="password" required />
         </div>
         <br>
-        
+
         <div>
             <lable for="gender">Gender</lable>
             <sup><span class="required">*</span></sup>
-            <input type="radio" name="gender" value="male" id="gender"/>
+            <input type="radio" name="gender" value="male" id="gender" />
             <span>Male</span>
-            <input type="radio" name="gender" value="female"/>
+            <input type="radio" name="gender" value="female" />
             <span>Female</span>
         </div>
 
@@ -57,11 +57,11 @@
         <div>
             <label for="skill">Skills</label>
             <sup><span class="required">*</span></sup>
-            <input type="checkbox" name="skill" value="HTML" id="skill"/>
+            <input type="checkbox" name="skill" value="HTML" id="skill" />
             <span>HTML</span>
             <input type="checkbox" name="skill" value="CSS" id="skill" />
             <span>CSS</span>
-            <input type="checkbox" name="skill" value="JS" id="skill"/>
+            <input type="checkbox" name="skill" value="JS" id="skill" />
             <span>JS</span>
 
         </div>
@@ -71,16 +71,16 @@
             <sup><span class="required">*</span></sup>
             <textarea name="address" id="address"></textarea>
         </div>
-        <button type="submit"
-            style="margin-top: 15px; margin-left: 50px; padding:5px;border-radius:5px; cursor: pointer;">Submit</button>
+        <button type="submit" class="submit-btn" id="submit">Submit</button>
 
     </form>
+    <span id="enteredfirstname"></span>
 </body>
 
 <script>
     console.log("hello world!");
-    var h1=document.getElementById("head");
-    console.log("h1",h1);
+    var h1 = document.getElementById("head");
+    console.log("h1", h1);
     // return;
     h1.style.backgroundColor = "blue";
     h1.style.cursor = "pointer";
@@ -93,14 +93,27 @@
     //     h1.style.backgroundColor = "gray";
     // });
 
-    function mouseOver(){
+    function mouseOver() {
         console.log("mouseover calling");
         h1.style.backgroundColor = "gray";
     }
-    h1.addEventListener("mouseout", function(){
+    h1.addEventListener("mouseout", function () {
         console.log("mouseout calling");
         h1.style.backgroundColor = "blue";
     })
+
+    var firstname = document.getElementById("firstname");
+    firstname.addEventListener("change", function (e) {
+        console.log("Firstname changed", e.target.value);
+        // document.getElementById("enteredfirstname").innerHTML = e.target.value;
+    });
+
+    document.getElementById("submit").addEventListener("click", function () {
+        var firstname = document.getElementById("firstname").value; console.log("firstname on submit", firstname);
+        document.getElementById("enteredfirstname").innerHTML = firstname;
+    });
+
+
 </script>
 
 </html>
