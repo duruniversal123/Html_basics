@@ -71,10 +71,22 @@
             <sup><span class="required">*</span></sup>
             <textarea name="address" id="address"></textarea>
         </div>
-        <button type="submit" class="submit-btn" id="submit">Submit</button>
+        
 
     </form>
+    <button type="submit" class="submit-btn" id="submit">Submit</button>
+    <br/>
     <span id="enteredfirstname"></span>
+    <span id="enteredlastname"></span>
+    <span id="enteredusername"></span>
+    <span id="enteredpassword"></span>
+    <span id="enteredgender"></span>
+    <span id="enteredskill"></span>
+    <span id="enteredaddress"></span>
+
+    <h1 id="created"></h1>
+
+
 </body>
 
 <script>
@@ -109,8 +121,27 @@
     });
 
     document.getElementById("submit").addEventListener("click", function () {
-        var firstname = document.getElementById("firstname").value; console.log("firstname on submit", firstname);
+        var firstname = document.getElementById("firstname").value; 
+       
+        var lastname = document.getElementById("lastname").value; 
+        var username = document.getElementById("username").value; 
+        var password = document.getElementById("password").value; 
+        var gender = document.getElementById("gender").value; 
+        var skill = document.getElementById("skill").value; 
+        var address = document.getElementById("address").value; 
+      
+      
         document.getElementById("enteredfirstname").innerHTML = firstname;
+        document.getElementById("enteredlastname").innerHTML = lastname;
+        document.getElementById("enteredusername").innerHTML = username;
+        document.getElementById("enteredpassword").innerHTML = password;
+        document.getElementById("enteredgender").innerHTML = gender;
+        document.getElementById("enteredskill").innerHTML = skill;
+        document.getElementById("enteredaddress").innerHTML = address;
+
+        document.getElementById("created").innerHTML = `Your account has been created successfully ${Date.now()}`;
+
+
     });
 
 
