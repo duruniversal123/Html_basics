@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Licence Application</h1>
+    <div>
+      <label for="age">Enter your Age</label>
+      <input type="number" id="age" name="age" />
+    </div>
+    <br />
+    <div>
+      <label for="drive">Driving Status</label>
+      <input type="radio" id="noDrive" name="drive" value="no" />
+      <span>no</span>
+      <input type="radio" id="yesDrive" name="drive" value="yes" checked="no" />
+      <span>yes</span>
+    </div>
+    <br />
+    <button id="submit">Submit Application</button>
+    <p id ="message"></p>
+  </body>
+
+  <script>
+    
+
+    document.getElementById("submit").addEventListener("click", function () {
+      const age = document.getElementById("age").value;
+      console.log("isNumber(age)",isNaN(age))
+      // if(isNumber(age)) {}
+      console.log("age", age);
+      let val;
+      var select=document.getElementsByName("drive");
+      for(let i=0;i<select.length;i++) {
+        if(select[i].checked){
+           val=select[i].value;
+           break;
+        }
+      }
+
+      console.log("val",val);
+
+      if (age >= 18 && val == "yes") {
+        // alert("Congrats tou are eligible for the licence .");
+        document.getElementById("message").innerHTML ="Congrats tou are eligible for the licence ."
+      } else {
+        // alert("sorry tou are not eligible for the licence .");
+        document.getElementById("message").innerHTML ="Sorry tou are not eligible for the licence ."
+      }
+    });
+  </script>
+</html>
