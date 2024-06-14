@@ -1,15 +1,15 @@
 // import http from 'http';//in ES6
 const http= require('http');//in commonJS
-const fs=require('fs');
+const fs=require('fs');//file-system
 const port =9001;
-const fileName="durgesh.txt";
+const fileName="durgesh.tx";
 http.createServer(function(req,res){
-   fs.writeFile(`./${fileName}`," hello all ! How are you ? Ans:- we are good." ,function(err,data){
+   fs.readFile(`./${fileName}`,function(err,data){
     if(err){
-        res.end(`error in writeFile ${err}`);
+        res.end(`error in readfile ${err}`);
     }
     else{
-        res.end("Successfully wrote");
+        res.end(`Successfully read the data is ${data} from ${fileName}`);
     }
    });
 }).listen(port,function(){
