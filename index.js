@@ -4,7 +4,7 @@ const message = require("./constant/message");
 console.log("message object data", message);
 
 const studentRouter = require("./routes/student.route");
-
+const commonRouter=require("./routes/common.route");
 const port = 9000;
 const app = express();
 
@@ -20,7 +20,10 @@ const users = [
 // parse incoming body data in the form of application/json
 app.use(bodyParser.json());
 
-//get request
+//coomon router endpoint
+app.use("/",commonRouter);
+
+//student router endpoint
 app.use("/student",studentRouter);
 
 
@@ -77,39 +80,6 @@ app.get("/api/user/delete/:id", function (req, res) {
   }
 });
 
-//post registration request
-app.post("/api/register", function (req, res) {
-  console.log("req data", req);
-  console.log("req body data", req.body);
-  const { firstname, lastname, username, password } = req.body;
-  if (firstname && lastname && username && password) {
-    res.send({
-      message: message.success.registerMessage,
-      status: 1,
-      data: { firstname, lastname, username, password },
-    });
-  } else {
-    res.send({ message: message.error.registerMessage, status: 1 });
-  }
-  //json data response
-});
-
-//post login request
-app.post("/api/login", function (req, res) {
-  console.log("req data", req);
-  console.log("req body data", req.body);
-  const { username, password } = req.body;
-  if (username && password) {
-    res.send({
-      message: message.success.loginMessage,
-      status: 1,
-      data: { username, password },
-    });
-  } else {
-    res.send({ message: message.error.loginMessage, status: 0 });
-  }
-  //json data response
-});
 
 
 //import emailSend
