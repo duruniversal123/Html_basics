@@ -67,12 +67,27 @@ const resetPassword = async function (req, res) {
   }
 };
 
-const userEmailSend=async function (req, res) {
+const userEmailSend = async function (req, res) {
   const email = req.body.email;
-  const message = await emailSend(email,"","welcome");
+  const message = await emailSend(email, "", "welcome");
   if (message) {
     res.send({ message: "message sent in your email address", status: 1 });
   }
-}
+};
 
-module.exports = { getUsers, getUserById, userDelete, resetPassword,userEmailSend};
+const userUpload = async (req, res) => {
+  console.log("req", req.file);
+  if(req.file.filename){
+    res.send({ message: "file uloading success", status: 1 });
+  }
+  else res.send({ message: "failed to upload file", status: 0 });
+};
+
+module.exports = {
+  getUsers,
+  getUserById,
+  userDelete,
+  resetPassword,
+  userEmailSend,
+  userUpload,
+};
